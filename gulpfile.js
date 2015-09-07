@@ -9,7 +9,10 @@ var plumber = require('gulp-plumber');
 var config = {
   src: {
     sass: [
-      './sass/*.scss'
+      './sass/*.scss',
+      './sass/materialize.scss',
+      './sass/**/*.scss',
+      './sass/**/**/*.scss'
    ],
     js: ['./js/*.js', './js/**/*.js']
   },
