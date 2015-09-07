@@ -1,0 +1,27 @@
+{
+  "name": "express-angular-seed",
+  "version": "0.0.0",
+  "authors": [
+    "warlyware <danward@gmail.com>"
+  ],
+  "description": "Express + Angular seed project",
+  "main": "app.js",
+  "keywords": [
+    "express",
+    "angular"
+  ],
+  "license": "MIT",
+  "homepage": "github.com/warlyware",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "Materialize": "materialize#~0.97.0"
+  }
+}
