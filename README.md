@@ -1,3 +1,3 @@
-# express-angular-seed
+# A1 Sewing
 
-Simple seed project for an app built with Anuglar, Express, Sass, Gulp, and Materialize.
+Prototype of the website for A1 Sewing company
