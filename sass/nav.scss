@@ -1,0 +1,25 @@
+@import "variables";
+
+nav {
+  .brand-logo {
+    font: 5rem $font-heading;
+    letter-spacing: 3px;
+    margin-left: 15px;
+  }
+
+  ul{
+    a {
+      font: 1.3rem $font-nav;
+      letter-spacing: 2px;
+      padding: 23px 20px 22px 20px;
+    }
+    .dropdown-content {
+      li {
+        a {
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+
+}

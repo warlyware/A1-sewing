@@ -10,9 +10,7 @@ var config = {
   src: {
     sass: [
       './sass/*.scss',
-      './sass/materialize.scss',
-      './sass/**/*.scss',
-      './sass/**/**/*.scss'
+      './sass/materialize.scss'
    ],
     js: ['./js/*.js', './js/**/*.js']
   },

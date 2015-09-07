@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
   <head>
-    <title><%= title %></title>
+    <title>A1 Sewing Machine & Vacuum Center</title>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/angular/angular.min.js"></script>
     <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/lib/Materialize/dist/js/materialize.min.js"></script>
     <!-- <link rel="stylesheet" href="/lib/Materialize/dist/css/materialize.min.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Tangerine|Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet' href='/style.css'>
 
   </head>
   <body>
 
-    <nav>
+
+    <ul id="about-us-dropdown" class="dropdown-content">
+      <li><a href="#!">Our Location</a></li>
+      <li><a href="#!">Contact Us</a></li>
+    </ul>
+
+    <ul id="classes-dropdown" class="dropdown-content">
+      <li><a href="#!">Beginning Quilting</a></li>
+      <li><a href="#!">Beginning Sewing</a></li>
+      <li><a href="#!">Clubs</a></li>
+      <li><a href="#!">Owners Classes</a></li>
+      <li><a href="#!">Private Lessons</a></li>
+      <li><a href="#!">Teachers</a></li>
+    </ul>
+
+
+    <nav class="z-depth-2">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
+        <a href="#" class="brand-logo">A1 Sewing</a>
+        <ul id="nav-mobile" class="hide-on-med-and-down right">
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="about-us-dropdown">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="classes-dropdown">
+              Classes
+            </a>
+          </li>
+          <li><a href="#">Repair Service</a></li>
+          <li><a href="#">Newsletter</a></li>
         </ul>
       </div>
     </nav>
-
-
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
     <div ui-view></div>
 

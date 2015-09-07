@@ -1,6 +1,12 @@
-$font-stack:    Helvetica, sans-serif;
+// $font-stack: Helvetica, sans-serif;
+
+@import "variables";
 
 body {
-  font: 100% $font-stack;
-  background-color: grey;
+  // font: 100% $font-stack;
+  background-color: $color-background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: 100% $font-heading;
 }
