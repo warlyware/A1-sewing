@@ -1,0 +1,35 @@
+@import "variables";
+
+.home {
+  .top-row {
+    text-align: center
+  }
+  .sub-heading {
+    border-bottom: 1px solid grey;
+    display: inline-block;
+    margin-top: 0;
+    letter-spacing: 4px;
+  }
+  .phone-number {
+    font: 4rem $font-body;
+    font-style: italic;
+    letter-spacing: 3px;
+    // font-size: 4rem;
+  }
+  .address {
+    font: 2rem $font-body;
+    letter-spacing: 3px;
+  }
+  .address-secondary {
+    font: 1.2rem $font-body;
+    letter-spacing: 3px;
+    font-style: italic;
+  }
+
+  .parallax-container-1 {
+    height: 420px !important;
+    width: 100%;
+  }
+
+
+}

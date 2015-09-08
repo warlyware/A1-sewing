@@ -3,10 +3,21 @@
 @import "variables";
 
 body {
-  // font: 100% $font-stack;
+  font: 100% $font-body;
   background-color: $color-background;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font: 100% $font-heading;
+}
+
+h1 {
+  letter-spacing: 3px;
+  font-size: 5rem !important;
+}
+
+p {
+  // font-size: 2em;
+  letter-spacing: 2px;
+  line-height: 1.7em;
 }
