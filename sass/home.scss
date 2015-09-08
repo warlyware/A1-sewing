@@ -17,18 +17,40 @@
     // font-size: 4rem;
   }
   .address {
-    font: 2rem $font-body;
+    font-size: 2rem;
     letter-spacing: 3px;
   }
   .address-secondary {
-    font: 1.2rem $font-body;
+    font-size: 1.2rem;
     letter-spacing: 3px;
     font-style: italic;
   }
 
+  .parallax-container {
+    width: 100%;
+  }
+
   .parallax-container-1 {
     height: 420px !important;
-    width: 100%;
+  }
+
+  .parallax-container-2 {
+    height: 570px !important;
+  }
+
+  .parallax-hr {
+    height: 60px !important;
+  }
+
+  .copy-text {
+    font-size: 3rem;
+  }
+  .copy-subtext {
+    font-size: 2.3rem;
+    font-style: italic;
+  }
+  .flow-text {
+    text-align: justify;
   }
 
 

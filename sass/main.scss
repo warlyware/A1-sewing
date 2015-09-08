@@ -5,16 +5,19 @@
 body {
   font: 100% $font-body;
   background-color: $color-background;
+  letter-spacing: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font: 100% $font-heading;
+  letter-spacing: 3px;
 }
 
 h1 {
-  letter-spacing: 3px;
   font-size: 5rem !important;
 }
+
+
 
 p {
   // font-size: 2em;
