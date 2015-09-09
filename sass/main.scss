@@ -17,6 +17,14 @@ h1 {
   font-size: 5rem !important;
 }
 
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: inherit;
+}
+
 p {
   // font-size: 2em;
   letter-spacing: 2px;
