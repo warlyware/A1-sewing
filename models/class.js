@@ -2,10 +2,11 @@ var mongoose = require('mongoose');
 
 var classSchema = mongoose.Schema({
   type: String,
-  date: Date,
-  paid: Boolean
+  date: String,
+  paid: Boolean,
+  attending: [{type: mongoose.Schema.ObjectId, ref: 'User'}]
 });
 
-var Class = mongoose.model('Class', classSchema);
+var SewingClass = mongoose.model('SewingClass', classSchema);
 
-module.exports = Class;
+module.exports = SewingClass;

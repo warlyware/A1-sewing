@@ -4,7 +4,7 @@ var userSchema = mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  classes: [{type: mongoose.Schema.ObjectId, ref: 'Class'}]
+  classes: [{type: mongoose.Schema.ObjectId, ref: 'SewingClass'}]
 });
 
 var User = mongoose.model('User', userSchema);

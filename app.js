@@ -8,9 +8,9 @@ var mongoose = require('mongoose');
 
 var app = express();
 
-app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
-app.use('/classes', require('./routes/classes'));
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var classes = require('./routes/classes');
 
 mongoose.connect('mongodb://localhost/test');
 
@@ -25,6 +25,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', routes);
+app.use('/users', users);
+app.use('/classes', classes);
 
 
 // catch 404 and forward to error handler
