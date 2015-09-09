@@ -4,14 +4,14 @@ var router = express.Router();
 var User = require('../models/user.js');
 
 router.get('/', function(req, res, next) {
-  User.find({}, function(err, users) {
+  User.find({}).populate('classes').exec(function(err, users) {
     res.json(users);
   });
 });
 
 router.get('/:userId', function(req, res, next) {
   var userId = req.params.userId;
-  User.findById(userId, function(err, user) {
+  User.findById(userId).populate('classes').exec(function(err, user) {
     res.json(user);
   });
 });
