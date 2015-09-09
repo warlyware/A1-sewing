@@ -32,7 +32,7 @@ router.post('/register', function(req, res, next) {
           res.json({
             'user': savedUser,
             'class': savedClass
-          })
+          });
         });
       });
 
