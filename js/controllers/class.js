@@ -42,14 +42,29 @@ angular.module('myApp').controller('ClassCtrl', function ($scope) {
   $scope.events =
     [
       {
-        date: tomorrow,
-        status: 'class1'
+        date: '09-12-2015',
+        status: 'class1',
       },
       {
-        date: afterTomorrow,
+        date: '09-28-2015',
         status: 'class2'
       }
     ];
+
+  $scope.getEventInfo = function() {
+    // var moment = moment($scope.dt).format();
+    // var date =
+    var date = moment($scope.dt).format('MM-DD-YYYY');
+    console.log('getting info', date);
+    if (date == '09-12-2015') {
+      $scope.eventInfo = 'This is some sort of class.';
+    }
+    else if (date == '09-28-2015') {
+        $scope.eventInfo = 'This is some other sort of class.';
+    } else {
+      $scope.eventInfo = '';
+    }
+  };
 
   $scope.getDayClass = function(date, mode) {
     if (mode === 'day') {

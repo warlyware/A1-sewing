@@ -4,13 +4,15 @@
   <div class="row">
     <div class="col s12 m7 l6">
       <div style="display:inline-block; min-height:290px;">
-        <datepicker ng-model="dt" min-date="minDate" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+        <datepicker ng-model="dt" ng-change="getEventInfo()" min-date="minDate" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
       </div>
     </div>
     <div class="col s12 m5 l6">
       <div class="card-panel">
         <div class="card-content">
           <p class="flow-text center">Classes for <br> <em>{{dt | date:'fullDate' }}</em></p>
+          <hr><br>
+          <p class="flow-text center">{{eventInfo}}</p>
         </div>
       </div>
     </div>

@@ -15,14 +15,14 @@
 }
 
 .btn-info.active, .btn-info.active:focus, .btn-info.active:hover {
-  color: darkgreen;
+  color: black;
   border: 1px solid black;
-  background-color: $primary-color;
+  background-color: darkgreen;
 }
 
 // Today
 .text-info {
-  color: #E9FB00;
+  color: white;
 }
 
 .btn-sm {
