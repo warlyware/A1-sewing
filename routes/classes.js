@@ -7,7 +7,7 @@ var User = require('../models/user.js');
 
 
 router.get('/', function(req, res, next) {
-  SewingClass.find({}).populate('attending').exec(function(err, classes) {
+  SewingClass.find({}).populate('attendingPaid').populate('attendingNotPaid').exec(function(err, classes) {
     res.json(classes);
   });
 });

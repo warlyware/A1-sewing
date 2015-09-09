@@ -30,3 +30,6 @@ p {
 .italic {
   font-style: italic;
 }
+
+// Required by ui-bootstrap
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
