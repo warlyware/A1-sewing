@@ -12,6 +12,16 @@ angular.module('myApp')
         url: '/classes',
         templateUrl: '/templates/classes.html',
         controller: 'ClassCtrl'
+      })
+      .state('quilting', {
+        url: '/quilting',
+        templateUrl: '/templates/classes/quilting.html',
+        controller: 'ClassCtrl'
+      })
+      .state('sewing', {
+        url: '/sewing',
+        templateUrl: '/templates/classes/sewing.html',
+        controller: 'ClassCtrl'
       });
 
   });
