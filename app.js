@@ -11,6 +11,7 @@ var app = express();
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var classes = require('./routes/classes');
+var mail = require('./routes/mail');
 
 mongoose.connect('mongodb://localhost/test');
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/classes', classes);
+app.use('/mail', mail);
 
 
 // catch 404 and forward to error handler
