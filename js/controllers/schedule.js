@@ -46,6 +46,10 @@ angular.module('myApp').controller('ScheduleCtrl', function ($scope) {
         status: 'class1',
       },
       {
+        date: '09-19-2015',
+        status: 'class1',
+      },
+      {
         date: '09-28-2015',
         status: 'class2'
       }
@@ -56,7 +60,7 @@ angular.module('myApp').controller('ScheduleCtrl', function ($scope) {
     // var date =
     var date = moment($scope.dt).format('MM-DD-YYYY');
     console.log('getting info', date);
-    if (date == '09-12-2015') {
+    if (date == '09-12-2015' || date == '09-19-2015') {
       $scope.eventName = 'Beginning Quilting';
       $scope.eventInfo = 'quilting';
     }
