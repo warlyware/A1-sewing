@@ -1,5 +1,5 @@
 angular.module('myApp')
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -22,6 +22,10 @@ angular.module('myApp')
         url: '/sewing',
         templateUrl: '/templates/classes/sewing.html',
         controller: 'ClassCtrl'
+      })
+      .state('admin', {
+        url: '/admin',
+        templateUrl: '/templates/admin.html',
+        controller: 'AdminCtrl'
       });
-
   });

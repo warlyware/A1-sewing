@@ -6,11 +6,7 @@ var User = require('../models/user.js');
 
 
 
-router.get('/', function(req, res, next) {
-  SewingClass.find({}).populate('attendingPaid').populate('attendingNotPaid').exec(function(err, classes) {
-    res.json(classes);
-  });
-});
+
 
 // router.get('/:userId', function(req, res, next) {
 //   var userId = req.params.userId;
@@ -53,10 +49,16 @@ router.post('/pay', function(req, res, next) {
 router.post('/register', function(req, res, next) {
   var classId = req.body.classId;
   var userId = req.body.userId;
+  var paid = req.body.paid;
+  console.log('PAID?', paid);
   User.findById(userId, function(err, user) {
     SewingClass.findById(classId, function(err, sewingClass) {
       user.classes.push(sewingClass._id);
-      sewingClass.attendingNotPaid.push(user._id);
+      if (paid === true) {
+        sewingClass.attendingPaid.push(user._id);
+      } else {
+        sewingClass.attendingNotPaid.push(user._id);
+      }
       sewingClass.save(function(err, savedClass) {
         user.save(function(err, savedUser) {
           res.json({

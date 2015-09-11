@@ -12,6 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var classes = require('./routes/classes');
 var mail = require('./routes/mail');
+var admin = require('./routes/admin');
 
 mongoose.connect('mongodb://localhost/test');
 
@@ -31,7 +32,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/classes', classes);
 app.use('/mail', mail);
-
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
