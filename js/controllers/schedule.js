@@ -98,7 +98,8 @@ angular.module('myApp').controller('ScheduleCtrl', function ($scope, ngDialog, $
       });
   };
 
-  $scope.registerForClass = function(user, classId) {
+  $scope.registerForClass = function(user, classId, className, classDate) {
+    ngDialog.closeAll();
     console.log('register', user);
     console.log('class', classId);
     $http.post('/users', {
@@ -117,6 +118,8 @@ angular.module('myApp').controller('ScheduleCtrl', function ($scope, ngDialog, $
         console.log(err);
       });
       console.log('newUser', user);
+      var formattedDate = moment(classDate).format('MMMM Do YYYY');
+      swal("Registered", "You are registered for " + className + " on " + formattedDate +  "!", "success");
     }, function(err) {
       console.log(err);
     });

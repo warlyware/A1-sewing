@@ -3,9 +3,9 @@
     <div class="col s12">
       <!-- <p class="flow-text">{{classes}}</p> -->
       <br><br>
-      <div ng-repeat="class in classes">
-        <h2>{{class.type}} - {{class.date}}</h2>
-        <table class="admin">
+      <div ng-repeat="class in classes | orderBy: 'date'">
+        <h2 ng-show="class.attendingPaid.length || class.attendingNotPaid.length">{{class.type}} - {{class.date}}</h2>
+        <table class="admin" ng-show="class.attendingPaid.length">
           <caption>Already Paid</caption>
           <thead>
             <tr>
@@ -14,37 +14,41 @@
               <th>Email</th>
             </tr>
           </thead>
-          <tr ng-repeat="student in class.attendingPaid">
+          <tr ng-repeat="user in class.attendingPaid">
             <td>
-              {{student.lastName}}
+              {{user.lastName}}
             </td>
             <td>
-              {{student.firstName}}
+              {{user.firstName}}
             </td>
             <td>
-              {{student.email}}
+              {{user.email}}
             </td>
           </tr>
         </table>
 
-        <table class="admin">
+        <table class="admin" ng-show="class.attendingNotPaid.length">
           <caption>Not Yet Paid</caption>
           <thead>
             <tr>
               <th>Last Name</th>
               <th>First Name</th>
               <th>Email</th>
+
             </tr>
           </thead>
-          <tr ng-repeat="student in class.attendingNotPaid">
+          <tr ng-repeat="user in class.attendingNotPaid">
             <td>
-              {{student.lastName}}
+              {{user.lastName}}
             </td>
             <td>
-              {{student.firstName}}
+              {{user.firstName}}
             </td>
             <td>
-              {{student.email}}
+              {{user.email}}
+            </td>
+            <td>
+              <button class="btn" ng-click="userIsNowPaid(user, class)">paid</button>
             </td>
           </tr>
         </table>
