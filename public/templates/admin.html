@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <!-- <p class="flow-text">{{classes}}</p> -->
+      <br><br>
+      <ul ng-repeat="class in classes">
+        <li>{{class.type}}</li>
+        <li>{{class.date}}</li>
+        <li>
+          <h4>Already Paid</h4>
+          <ul ng-repeat="student in class.attendingPaid">
+            <li><em>{{student.lastName}}, {{student.firstName}}</em> {{student.email}}</li>
+          </ul>
+          <h4>Not Yet Paid</h4>
+          <ul ng-repeat="student in class.attendingNotPaid">
+            <li><em>{{student.lastName}}, {{student.firstName}}</em> {{student.email}}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
