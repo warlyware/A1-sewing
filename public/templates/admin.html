@@ -3,20 +3,54 @@
     <div class="col s12">
       <!-- <p class="flow-text">{{classes}}</p> -->
       <br><br>
-      <ul ng-repeat="class in classes">
-        <li>{{class.type}}</li>
-        <li>{{class.date}}</li>
-        <li>
-          <h4>Already Paid</h4>
-          <ul ng-repeat="student in class.attendingPaid">
-            <li><em>{{student.lastName}}, {{student.firstName}}</em> {{student.email}}</li>
-          </ul>
-          <h4>Not Yet Paid</h4>
-          <ul ng-repeat="student in class.attendingNotPaid">
-            <li><em>{{student.lastName}}, {{student.firstName}}</em> {{student.email}}</li>
-          </ul>
-        </li>
-      </ul>
+      <div ng-repeat="class in classes">
+        <h2>{{class.type}} - {{class.date}}</h2>
+        <table>
+          <caption>Already Paid</caption>
+          <thead>
+            <tr>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tr ng-repeat="student in class.attendingPaid">
+            <td>
+              {{student.lastName}}
+            </td>
+            <td>
+              {{student.firstName}}
+            </td>
+            <td>
+              {{student.email}}
+            </td>
+          </tr>
+        </table>
+
+        <table>
+          <caption>Not Yet Paid</caption>
+          <thead>
+            <tr>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tr ng-repeat="student in class.attendingNotPaid">
+            <td>
+              {{student.lastName}}
+            </td>
+            <td>
+              {{student.firstName}}
+            </td>
+            <td>
+              {{student.email}}
+            </td>
+          </tr>
+        </table>
+
+      </div>
+
     </div>
   </div>
 </div>
