@@ -1,0 +1,22 @@
+
+<form ng-submit="registerForClass(user)">
+    <h4>Register</h4>
+    <p>Please enter the following information to register for {{eventName}}.</p>
+    <br>
+    <div class="input-field">
+      <input id="firstName" type="text" class="validate" ng-model="user.firstName">
+      <label for="firstName">First Name</label>
+    </div>
+    <div class="input-field">
+      <input id="lastName" type="text" class="validate" ng-model="user.lastName">
+      <label for="lastName">Last Name</label>
+    </div>
+    <div class="input-field">
+      <input id="email" type="email" class="validate" ng-model="user.email">
+      <label for="email">Email</label>
+    </div>
+    <br>
+    <div class="center">
+      <button type="submit" class="btn modal-action modal-close waves-effect waves-green">Register Now</button>
+    </div>
+</form>

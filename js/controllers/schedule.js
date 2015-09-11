@@ -1,4 +1,4 @@
-angular.module('myApp').controller('ScheduleCtrl', function ($scope) {
+angular.module('myApp').controller('ScheduleCtrl', function ($scope, ngDialog) {
   $scope.today = function() {
     $scope.dt = new Date();
   };
@@ -87,4 +87,23 @@ angular.module('myApp').controller('ScheduleCtrl', function ($scope) {
 
     return '';
   };
+
+  $scope.openRegistrationDialog = function() {
+    console.log('OPENING');
+      ngDialog.open({
+        template: '/templates/registerPopup.html',
+        className: 'ngdialog-theme-plain',
+        scope: $scope
+      });
+  };
+
+  $scope.registerForClass = function(user) {
+    console.log('register', user);
+  };
+
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+
 });

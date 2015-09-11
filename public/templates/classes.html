@@ -16,7 +16,7 @@
           <div class="center" ng-show="eventName">
             <p class="flow-text"><a ng-href="/#/{{eventInfo}}">Class Info</a></p>
             <br><hr>
-            <button data-target="modal1" class="btn modal-trigger">Register Now</button>
+            <button ng-click="openRegistrationDialog()">Register Now</button>
           </div>
         </div>
       </div>
@@ -27,26 +27,6 @@
 
 
 <!-- Modal Structure -->
- <div id="modal1" class="modal modal-fixed-footer">
-   <form ng-submit="registerForClass()">
-     <div class="modal-content">
-       <h4>Register</h4>
-       <p>Please enter the following information to register.</p>
-       <div class="input-field col s6">
-         <input id="firstName" type="text" class="validate" ng-model="firstName">
-         <label for="firstName">First Name</label>
-       </div>
-       <div class="input-field col s6">
-         <input id="lastName" type="text" class="validate" ng-model="lastName">
-         <label for="lastName">Last Name</label>
-       </div>
-       <div class="input-field col s6">
-         <input id="email" type="email" class="validate" ng-model="email">
-         <label for="email">Email</label>
-       </div>
-     </div>
-     <div class="modal-footer">
-       <button type="submit" class="btn modal-action modal-close waves-effect waves-green btn-flat">Register Now</button>
-     </div>
-   </form>
- </div>
+ <!-- <div id="modal1" class="modal modal-fixed-footer">
+
+ </div> -->
