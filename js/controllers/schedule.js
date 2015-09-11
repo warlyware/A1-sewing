@@ -1,4 +1,4 @@
-angular.module('myApp').controller('ScheduleCtrl', function ($scope, ngDialog) {
+angular.module('myApp').controller('ScheduleCtrl', function ($scope, ngDialog, $http) {
   $scope.today = function() {
     $scope.dt = new Date();
   };
@@ -60,9 +60,10 @@ angular.module('myApp').controller('ScheduleCtrl', function ($scope, ngDialog) {
     // var date =
     var date = moment($scope.dt).format('MM-DD-YYYY');
     console.log('getting info', date);
-    if (date == '09-12-2015' || date == '09-19-2015') {
+    if (date == '09-12-2015') {
       $scope.eventName = 'Beginning Quilting';
       $scope.eventInfo = 'quilting';
+      $scope.eventId = '55f07d12b06979be4b3459fc';
     }
     else if (date == '09-28-2015') {
       $scope.eventName = 'Beginning Sewing';
@@ -97,8 +98,28 @@ angular.module('myApp').controller('ScheduleCtrl', function ($scope, ngDialog) {
       });
   };
 
-  $scope.registerForClass = function(user) {
+  $scope.registerForClass = function(user, classId) {
     console.log('register', user);
+    console.log('class', classId);
+    $http.post('/users', {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email
+    }).then(function(user) {
+      var userData = user.data;
+      $http.post('/classes/register', {
+        userId: userData._id,
+        classId: classId,
+        paid: false
+      }).then(function(savedClass) {
+        console.log(savedClass);
+      }, function(err) {
+        console.log(err);
+      });
+      console.log('newUser', user);
+    }, function(err) {
+      console.log(err);
+    });
   };
 
   $(document).ready(function(){
